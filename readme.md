@@ -27,7 +27,7 @@ All methods have synchronous and asynchronous versions avilable.
 
 # Samples
 
-```
+```cs
 //Gets the paged user list
 var results = _userClient.GetUserList(new UserListRequest()
 {
