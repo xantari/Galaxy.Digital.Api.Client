@@ -1,4 +1,4 @@
-﻿# Galaxy Digital Interaction Library
+﻿# Galaxy Digital Interaction Library [![Build status](https://ci.appveyor.com/api/projects/status/hitn2ovkjxy5lnrm/branch/main?svg=true)](https://ci.appveyor.com/project/xantari/galaxy-digital-api-client/branch/main) [![NuGet tag](https://img.shields.io/badge/nuget-Galaxy.Digital.Api.Client-blue.svg)](https://www.nuget.org/packages?q=Galaxy.Digital.Api.Client)
 
 This library provides all the user functions for interacting with Galaxy Digital's API Endpoint.
 
