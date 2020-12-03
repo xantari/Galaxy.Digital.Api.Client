@@ -21,14 +21,12 @@ namespace Galaxy.Digital.Api.Client.Models
             Password = password;
         }
 
+        [JsonProperty(Required = Required.Always)]
         public int Id { get; set; }
         public string ReferenceId { get; set; }
-        [JsonProperty(Required = Required.Always)]
         public string FirstName { get; set; }
-        [JsonProperty(Required = Required.Always)]
         public string LastName { get; set; }
         public string MiddleName { get; set; }
-        [JsonProperty(Required = Required.Always)]
         public string Email { get; set; }
         public string Address { get; set; }
         public string Address2 { get; set; }
@@ -45,7 +43,6 @@ namespace Galaxy.Digital.Api.Client.Models
         public string Company { get; set; }
         public string Gender { get; set; }
         public string GradSemester { get; set; }
-        [JsonProperty(Required = Required.Always)]
         public string Password { get; set; }
         public DateTime? BirthDate { get; set; }
         public string DisasterContact { get; set; }

@@ -49,7 +49,9 @@ namespace Galaxy.Digital.Api.Client
         {
             _httpClient = httpClient;
             _settings = new Lazy<JsonSerializerSettings>(CreateSerializerSettings);
-            ReadResponseAsString = true; //11/17/2020 - MRO: Currently can't read by streams because we have to patch their JSON data due to bugs in their array versus null response types.
+            //11/17/2020 - MRO: Currently can't read by streams because we have to patch their JSON data due to bugs in their array versus null response types.
+            //12/03/2020 - MRO: They fixed their bug with their JSON result types, switching back to more efficient streams instead of string mode
+            ReadResponseAsString = false;
         }
 
 
@@ -493,6 +495,7 @@ namespace Galaxy.Digital.Api.Client
                 //Case # 66391: Fix bug in galaxy digital where they incorrectly change the response type of objects from Dictionary<string,string> to array based JSON 
                 //If they ever fix this, remove the below line. This happens in the userList API, when you encounter someone who doesn't have any "extras" defined. They denote it as
                 //extras: [], when it should be extras: null, because what they normally return there is NOT a JSON array. So they are switching the context of that field improperly.
+                //12/3/2020: They fixed this bug, switching back to streaming mode which should be more efficient
                 responseText = responseText.Replace("[]", "null"); 
                 try
                 {
